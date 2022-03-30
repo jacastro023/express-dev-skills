@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/style2.css' />
+    <title>skills</title>
+</head>
+<body>
+    <h1>Skills</h1>
+    <a href="/skills/new">Create Skill</a>
+    <ul>
+      <% skills.forEach(function(s) { %>
+        <a href="/skills/<%= s.id %>"><li><%= s.skill %> - <%= s.learned ? 'Learned' : 'Not Learned' %></li></a>
+      <% }); %>
+    </ul>
+</body>
+</html>
