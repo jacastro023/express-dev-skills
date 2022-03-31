@@ -6,9 +6,23 @@ module.exports = {
 	index,
 	show,
 	new: newSkill,
-	create
+	create,
+	delete: deleteSkill,
+	edit
 	// shorthand for 
 	// index: index
+}
+
+function edit(req, res){
+  
+	res.render('skills/edit', {
+		skill: Skill.getOne(req.params.id)
+	})
+}
+
+function deleteSkill(req, res){
+	Skill.deleteOne(req.params.id)
+	res.redirect('/skills')
 }
 
 function create(req, res){

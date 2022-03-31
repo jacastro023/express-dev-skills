@@ -8,7 +8,12 @@ router.get('/', skillsController.index); //
 router.get('/new', skillsController.new);
 //todos/:id
 router.get('/:id', skillsController.show);
+
+router.get('/:id/edit', skillsController.edit)
+
 //.index is the function we exported from the controllers/todos
 router.post('/', skillsController.create);
+
+router.delete('/:id', skillsController.delete);
 
 module.exports = router;
