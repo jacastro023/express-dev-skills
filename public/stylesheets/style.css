@@ -4,6 +4,10 @@ body {
   width: 25%;
   margin:auto;
   font-size: 25px;
+  background-image: url('/images/backgroundimage.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
 }
 
 a {

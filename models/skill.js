@@ -11,9 +11,14 @@ const skills = [
     getAll,
     getOne,
     create,
-    deleteOne
+    deleteOne,
+    updateOne
   };
   
+function updateOne(id){
+  return skills.find(skill => skill.id === parseInt(id));
+}
+
   function getAll() {
     return skills;
   }

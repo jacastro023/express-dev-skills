@@ -8,15 +8,29 @@ module.exports = {
 	new: newSkill,
 	create,
 	delete: deleteSkill,
-	edit
+	edit, 
+	update
 	// shorthand for 
 	// index: index
 }
 
+function update(req,res){
+	// console.log(req.params, ' <- update form---------')
+	// console.log(req.body, ' <- update form---------')
+	// console.log(req.body.skill, ' <- update form---------')
+	// console.log(req.body.learned, ' <- update form---------')
+	// console.log(Skill.updateOne(req.params.id).skill)
+	let isLearned = req.body.learned
+	let newSkill = req.body.skill
+	Skill.updateOne(req.params.id).skill = newSkill
+	Skill.updateOne(req.params.id).learned = isLearned
+	res.redirect('/skills')
+}
+
 function edit(req, res){
-  
+  console.log(req.params.id)
 	res.render('skills/edit', {
-		skill: Skill.getOne(req.params.id)
+		skill: Skill.getOne(req.params.id)	
 	})
 }
 
